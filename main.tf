@@ -74,6 +74,8 @@ resource "aws_lambda_function" "image_lambda" {
       BUCKET = var.bucket_name
     }
   }
+
+  tags = var.tags
 }
 
 data "archive_file" "auth_lambda" {

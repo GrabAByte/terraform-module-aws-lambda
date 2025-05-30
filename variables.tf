@@ -60,12 +60,6 @@ variable "lambda_filename" {
   default     = "lambda_function.zip"
 }
 
-variable "region" {
-  type        = string
-  description = "The AWS region in which to deploy"
-  default     = "eu-west-2"
-}
-
 variable "runtime" {
   type        = string
   description = "The lambda runtime"

@@ -12,8 +12,8 @@ resource "aws_iam_role" "lambda_exec_role" {
 }
 
 # least privilege iam
-resource "aws_iam_role_policy" "convertr_lambda_s3_policy" {
-  name = "convertr_lambda_s3_policy"
+resource "aws_iam_role_policy" "lambda_s3_policy" {
+  name = "lambda_s3_policy"
   role = aws_iam_role.lambda_exec_role.name
   policy = jsonencode({
     Version = "2012-10-17"
@@ -42,7 +42,7 @@ data "archive_file" "lambda" {
 }
 
 # using latest runtime: python3.13
-resource "aws_lambda_function" "image_lambda" {
+resource "aws_lambda_function" "lambda" {
   function_name = var.function_name
   role          = aws_iam_role.lambda_exec_role.arn
   handler       = var.handler
@@ -115,7 +115,7 @@ resource "aws_lambda_function" "auth_lambda" {
   # TODO: Retrieve $TOKEN AWS secret for Auth Lambda to determine if Bearer Token is accurate
   environment {
     variables = {
-      TOKEN = "convertr_api_token"
+      TOKEN = "api_token"
     }
   }
 }

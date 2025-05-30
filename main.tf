@@ -74,7 +74,6 @@ resource "aws_lambda_function" "lambda" {
       BUCKET = var.bucket_name
     }
   }
-
   tags = var.tags
 }
 

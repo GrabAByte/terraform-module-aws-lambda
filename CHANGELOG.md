@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.0.0...v1.0.1) (2025-05-30)
+
+
+### Bug Fixes
+
+* make defaults generic ([b9be489](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/b9be489239198e9d70487d142d25008e209f5510))
+* set module defaults for re-use [#2](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/2) ([b3632a0](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/b3632a0368e7e5e06e8992d8beb0d8cf2bceaa34))
+
 # 1.0.0 (2025-05-30)
 
 

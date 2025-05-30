@@ -13,6 +13,14 @@ jobs:
     uses: GrabAByte/github-devops-workflows/.github/workflows/terraformLint.yml@0.14.0
     with:
       terraformPath: .
+  test:
+    uses: GrabAByte/github-devops-workflows/.github/workflows/terraformTest.yml@feat/tftest
+    secrets:
+      account: ${{ secrets.AWS_ACCOUNT }}
+      role: ${{ secrets.AWS_ROLE }}
+    with:
+      region: eu-west-2
+      terraformPath: .
   semantic-release:
     uses: GrabAByte/github-devops-workflows/.github/workflows/semanticRelease.yml@0.14.0
     needs: [lint]

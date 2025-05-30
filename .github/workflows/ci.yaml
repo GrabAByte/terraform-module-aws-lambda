@@ -10,9 +10,19 @@ permissions: write-all
 
 jobs:
   lint:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/terraformLint.yml@0.14.0
+    uses: GrabAByte/github-devops-workflows/.github/workflows/terraformLint.yml@0.15.0
     with:
       terraformPath: .
-  semantic-release:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/semanticRelease.yml@0.14.0
+  test:
+    uses: GrabAByte/github-devops-workflows/.github/workflows/terraformTest.yml@0.15.0
+    secrets:
+      account: ${{ secrets.AWS_ACCOUNT }}
+      role: ${{ secrets.AWS_ROLE }}
+    with:
+      region: eu-west-2
+      terraformPath: .
+      varFile: ./tests/terraform.tfvars
     needs: [lint]
+  semantic-release:
+    uses: GrabAByte/github-devops-workflows/.github/workflows/semanticRelease.yml@0.15.0
+    needs: [lint,test]

@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.1.0...v1.2.0) (2025-05-30)
+
+
+### Features
+
+* add docs ([732b296](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/732b2968daad20a2ec47596a8efbd94cdf3bc04f))
+* add docs ([86dd7ae](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/86dd7ae9d6f4113aaf6329351d762d1dbd5bdaea))
+* add docs ([30993da](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/30993dadb20d38b03c2ab4a0badd638f18421ea4))
+
 # [1.1.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.0.1...v1.1.0) (2025-05-30)
 
 

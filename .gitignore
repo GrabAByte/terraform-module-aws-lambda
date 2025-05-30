@@ -1,5 +1,4 @@
 # Local .terraform directories
-.terraform*
 **/.terraform/*
 
 #  Ignore variables files
@@ -13,7 +12,6 @@
 
 #  Ignore CLI configuration files
 .terraformrc
-terraform*
 
 # binaries
 *.zip

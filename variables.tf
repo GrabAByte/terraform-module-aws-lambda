@@ -1,29 +1,3 @@
-variable "auth_function_name" {
-  type        = string
-  description = "The Lambda function name"
-}
-
-variable "auth_handler" {
-  type        = string
-  description = "The lambda handler"
-}
-
-variable "auth_runtime" {
-  type        = string
-  description = "The lambda runtime"
-}
-
-variable "auth_lambda_source" {
-  type        = string
-  description = "The source file for the auth lambda function"
-}
-
-
-variable "auth_lambda_filename" {
-  type        = string
-  description = "The lambda filename"
-}
-
 variable "bucket_arn" {
   type        = string
   description = "The S3 bucket ARN to upload to"

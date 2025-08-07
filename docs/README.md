@@ -33,11 +33,6 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_auth_function_name"></a> [auth\_function\_name](#input\_auth\_function\_name) | The Lambda function name | `string` | n/a | yes |
-| <a name="input_auth_handler"></a> [auth\_handler](#input\_auth\_handler) | The lambda handler | `string` | n/a | yes |
-| <a name="input_auth_lambda_filename"></a> [auth\_lambda\_filename](#input\_auth\_lambda\_filename) | The lambda filename | `string` | n/a | yes |
-| <a name="input_auth_lambda_source"></a> [auth\_lambda\_source](#input\_auth\_lambda\_source) | The source file for the auth lambda function | `string` | n/a | yes |
-| <a name="input_auth_runtime"></a> [auth\_runtime](#input\_auth\_runtime) | The lambda runtime | `string` | n/a | yes |
 | <a name="input_bucket_arn"></a> [bucket\_arn](#input\_bucket\_arn) | The S3 bucket ARN to upload to | `string` | n/a | yes |
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The S3 bucket to upload to | `string` | n/a | yes |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The Lambda function name | `string` | n/a | yes |

@@ -57,30 +57,30 @@ resource "aws_iam_role_policy_attachment" "vpc_exec" {
 }
 
 # TODO: if $integration_source is api gateway
-resource "aws_lambda_permission" "auth_api_gateway" {
-  statement_id  = "AllowExecutionFromAPIGatewayAuth"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.auth_lambda.function_name
-  principal     = "apigateway.amazonaws.com"
-}
+#resource "aws_lambda_permission" "auth_api_gateway" {
+#  statement_id  = "AllowExecutionFromAPIGatewayAuth"
+#  action        = "lambda:InvokeFunction"
+#  function_name = aws_lambda_function.auth_lambda.function_name
+#  principal     = "apigateway.amazonaws.com"
+#}
 
 # TODO: if $integration_destination
-resource "aws_iam_role_policy" "lambda_s3_policy" {
-  name = "lambda_s3_policy"
-  role = aws_iam_role.lambda_exec_role.name
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = [
-          "s3:GetObject",
-          "s3:PutObject"
-        ]
-        Effect   = "Allow"
-        Resource = "${var.bucket_arn}/*"
-      },
-    ]
-  })
-}
+#resource "aws_iam_role_policy" "lambda_s3_policy" {
+#  name = "lambda_s3_policy"
+#  role = aws_iam_role.lambda_exec_role.name
+#  policy = jsonencode({
+#    Version = "2012-10-17"
+#    Statement = [
+#      {
+#        Action = [
+#          "s3:GetObject",
+#          "s3:PutObject"
+#        ]
+#        Effect   = "Allow"
+#        Resource = "${var.bucket_arn}/*"
+#      },
+#   ]
+# })
+#}
 
 

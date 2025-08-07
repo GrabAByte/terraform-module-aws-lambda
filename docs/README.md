@@ -23,10 +23,8 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_iam_role.lambda_exec_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy.lambda_s3_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 | [aws_iam_role_policy_attachment.vpc_exec](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_lambda_function.lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
-| [aws_lambda_permission.auth_api_gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
 | [archive_file.lambda](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
 
 ## Inputs
@@ -48,9 +46,5 @@ No modules.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_auth_invoke_arn"></a> [auth\_invoke\_arn](#output\_auth\_invoke\_arn) | n/a |
-| <a name="output_invoke_arn"></a> [invoke\_arn](#output\_invoke\_arn) | n/a |
-| <a name="output_name"></a> [name](#output\_name) | n/a |
+No outputs.
 <!-- END_TF_DOCS -->

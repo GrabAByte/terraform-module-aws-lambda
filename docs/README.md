@@ -40,7 +40,7 @@ No modules.
 | <a name="input_api_integration"></a> [api\_integration](#input\_api\_integration) | Is lambda integrated to API Gateway | `bool` | `false` | no |
 | <a name="input_bucket_arn"></a> [bucket\_arn](#input\_bucket\_arn) | The S3 bucket ARN to upload to | `string` | n/a | yes |
 | <a name="input_dynamodb_integration"></a> [dynamodb\_integration](#input\_dynamodb\_integration) | Is lambda integrated to Dynamo DB | `bool` | `false` | no |
-| <a name="input_dynamodb_table_arn"></a> [dynamodb\_table\_arn](#input\_dynamodb\_table\_arn) | The ARN of the dynamo DB table | `string` | n/a | yes |
+| <a name="input_dynamodb_table_arn"></a> [dynamodb\_table\_arn](#input\_dynamodb\_table\_arn) | The ARN of the dynamo DB table | `string` | `null` | no |
 | <a name="input_enable_logging"></a> [enable\_logging](#input\_enable\_logging) | Whether to send logs to Cloudwatch | `bool` | `true` | no |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The Lambda function name | `string` | n/a | yes |
 | <a name="input_handler"></a> [handler](#input\_handler) | The lambda handler | `string` | n/a | yes |

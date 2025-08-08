@@ -6,6 +6,7 @@ variable "bucket_arn" {
 variable "dynamodb_table_arn" {
   type        = string
   description = "The ARN of the dynamo DB table"
+  default     = null
 }
 
 variable "enable_logging" {

@@ -90,10 +90,10 @@ resource "aws_iam_role_policy" "lambda_s3_policy" {
   })
 }
 
-resource "aws_iam_policy" "lambda_dynamodb_policy" {
-  count       = var.dynamodb_integration ? 1 : 0
-  name        = "lambda_dynamodb_write_policy"
-  description = "Allow Lambda to write to a DynamoDB table"
+resource "aws_iam_role_policy" "lambda_dynamodb_policy" {
+  count = var.dynamodb_integration ? 1 : 0
+  name  = "lambda_dynamodb_policy"
+  role  = aws_iam_role.lambda_exec_role.name
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -110,10 +110,4 @@ resource "aws_iam_policy" "lambda_dynamodb_policy" {
       }
     ]
   })
-}
-
-resource "aws_iam_role_policy_attachment" "lambda_dynamodb_policy_attach" {
-  count      = var.dynamodb_integration ? 1 : 0
-  role       = aws_iam_role.lambda_exec_role.name
-  policy_arn = aws_iam_policy.lambda_dynamodb_policy[count.index].arn
 }

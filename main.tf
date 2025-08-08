@@ -33,15 +33,10 @@ resource "aws_lambda_function" "lambda" {
     security_group_ids = [var.security_groups]
   }
 
-  # TODO: gather config as a map input from control repo main.tf
-  #logging_config {
-  #  log_format       = "JSON"
-  #  system_log_level = "DEBUG"
-  #}
-
-  #tracing_config {
-  #  mode = "Active"
-  #}
+  logging_config {
+    log_format       = "JSON"
+    system_log_level = "DEBUG"
+  }
 
   #environment {
   #  variables = {
@@ -60,6 +55,12 @@ resource "aws_iam_role_policy_attachment" "lambda_logging" {
   count      = var.enable_logging ? 1 : 0
   role       = aws_iam_role.lambda_exec_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+resource "aws_cloudwatch_log_group" "lambda_log_group" {
+  count             = var.enable_logging ? 1 : 0
+  name              = "/aws/lambda/${aws_lambda_function.lambda.function_name}"
+  retention_in_days = 14
 }
 
 resource "aws_lambda_permission" "auth_api_gateway" {

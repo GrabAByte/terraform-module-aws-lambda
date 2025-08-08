@@ -3,11 +3,6 @@ variable "bucket_arn" {
   description = "The S3 bucket ARN to upload to"
 }
 
-# variable "bucket_name" {
-#   type        = string
-#   description = "The S3 bucket"
-# }
-
 variable "enable_logging" {
   type        = bool
   description = "Whether to send logs to Cloudwatch"

@@ -28,6 +28,11 @@ resource "aws_lambda_function" "lambda" {
   # ensure fingerprint of code
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
+  vpc_config {
+    subnet_ids         = [var.vpc_subnet_0, var.vpc_subnet_1]
+    security_group_ids = [var.security_groups]
+  }
+
   # TODO: gather config as a map input from control repo main.tf
   #logging_config {
   #  log_format       = "JSON"
@@ -36,11 +41,6 @@ resource "aws_lambda_function" "lambda" {
 
   #tracing_config {
   #  mode = "Active"
-  #}
-
-  #vpc_config {
-  #  subnet_ids         = [var.vpc_subnet_0, var.vpc_subnet_1]
-  #  security_group_ids = [var.security_groups]
   #}
 
   #environment {
@@ -56,31 +56,35 @@ resource "aws_iam_role_policy_attachment" "vpc_exec" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
 }
 
-# TODO: if $integration_source is api gateway
-#resource "aws_lambda_permission" "auth_api_gateway" {
-#  statement_id  = "AllowExecutionFromAPIGatewayAuth"
-#  action        = "lambda:InvokeFunction"
-#  function_name = aws_lambda_function.auth_lambda.function_name
-#  principal     = "apigateway.amazonaws.com"
-#}
+resource "aws_iam_role_policy_attachment" "lambda_logging" {
+  count      = var.enable_logging ? 1 : 0
+  role       = aws_iam_role.lambda_exec_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
 
-# TODO: if $integration_destination
-#resource "aws_iam_role_policy" "lambda_s3_policy" {
-#  name = "lambda_s3_policy"
-#  role = aws_iam_role.lambda_exec_role.name
-#  policy = jsonencode({
-#    Version = "2012-10-17"
-#    Statement = [
-#      {
-#        Action = [
-#          "s3:GetObject",
-#          "s3:PutObject"
-#        ]
-#        Effect   = "Allow"
-#        Resource = "${var.bucket_arn}/*"
-#      },
-#   ]
-# })
-#}
+resource "aws_lambda_permission" "auth_api_gateway" {
+  count         = var.integration_source == "API Auth" ? 1 : 0
+  statement_id  = "AllowExecutionFromAPIGatewayAuth"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.lambda.function_name
+  principal     = "apigateway.amazonaws.com"
+}
 
-
+resource "aws_iam_role_policy" "lambda_s3_policy" {
+  count = var.integration_destination == "S3" ? 1 : 0
+  name  = "lambda_s3_policy"
+  role  = aws_iam_role.lambda_exec_role.name
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:GetObject",
+          "s3:PutObject"
+        ]
+        Effect   = "Allow"
+        Resource = "${var.bucket_arn}/*"
+      },
+    ]
+  })
+}

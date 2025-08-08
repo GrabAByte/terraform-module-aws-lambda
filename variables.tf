@@ -8,6 +8,12 @@ variable "bucket_name" {
   description = "The S3 bucket to upload to"
 }
 
+variable "enable_logging" {
+  type        = bool
+  description = "Whether to send logs to Cloudwatch"
+  default     = true
+}
+
 variable "function_name" {
   type        = string
   description = "The Lambda function name"
@@ -21,6 +27,16 @@ variable "handler" {
 variable "iam_role_name" {
   type        = string
   description = "The name of the IAM Role to assign the policy to"
+}
+
+variable "integration_source" {
+  type        = string
+  description = "The sourcing integration"
+}
+
+variable "integration_destination" {
+  type        = string
+  description = "The destination integration"
 }
 
 variable "lambda_source" {

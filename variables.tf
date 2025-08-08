@@ -56,7 +56,6 @@ variable "lambda_source" {
 variable "lambda_filename" {
   type        = string
   description = "The lambda filename"
-  default     = "lambda_function.zip"
 }
 
 variable "runtime" {

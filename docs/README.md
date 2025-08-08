@@ -44,7 +44,7 @@ No modules.
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The Lambda function name | `string` | n/a | yes |
 | <a name="input_handler"></a> [handler](#input\_handler) | The lambda handler | `string` | n/a | yes |
 | <a name="input_iam_role_name"></a> [iam\_role\_name](#input\_iam\_role\_name) | The name of the IAM Role to assign the policy to | `string` | n/a | yes |
-| <a name="input_lambda_filename"></a> [lambda\_filename](#input\_lambda\_filename) | The lambda filename | `string` | `"lambda_function.zip"` | no |
+| <a name="input_lambda_filename"></a> [lambda\_filename](#input\_lambda\_filename) | The lambda filename | `string` | n/a | yes |
 | <a name="input_lambda_source"></a> [lambda\_source](#input\_lambda\_source) | The source file for the lambda function | `string` | n/a | yes |
 | <a name="input_runtime"></a> [runtime](#input\_runtime) | The lambda runtime | `string` | n/a | yes |
 | <a name="input_s3_integration"></a> [s3\_integration](#input\_s3\_integration) | Is lambda integrated to S3 | `bool` | `false` | no |

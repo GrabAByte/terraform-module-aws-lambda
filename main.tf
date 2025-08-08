@@ -64,7 +64,7 @@ resource "aws_cloudwatch_log_group" "lambda_log_group" {
 }
 
 resource "aws_lambda_permission" "auth_api_gateway" {
-  count         = var.integration_source == "API Auth" ? 1 : 0
+  count         = var.api_integration ? 1 : 0
   statement_id  = "AllowExecutionFromAPIGatewayAuth"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.lambda.function_name
@@ -72,7 +72,7 @@ resource "aws_lambda_permission" "auth_api_gateway" {
 }
 
 resource "aws_iam_role_policy" "lambda_s3_policy" {
-  count = var.integration_destination == "S3" ? 1 : 0
+  count = var.s3_integration ? 1 : 0
   name  = "lambda_s3_policy"
   role  = aws_iam_role.lambda_exec_role.name
   policy = jsonencode({
@@ -88,4 +88,32 @@ resource "aws_iam_role_policy" "lambda_s3_policy" {
       },
     ]
   })
+}
+
+resource "aws_iam_policy" "lambda_dynamodb_policy" {
+  count       = var.dynamodb_integration ? 1 : 0
+  name        = "lambda_dynamodb_write_policy"
+  description = "Allow Lambda to write to a DynamoDB table"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "dynamodb:PutItem",
+          "dynamodb:UpdateItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem"
+        ]
+        Resource = var.dynamodb_table_arn
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_dynamodb_policy_attach" {
+  count      = var.dynamodb_integration ? 1 : 0
+  role       = aws_iam_role.lambda_exec_role.name
+  policy_arn = aws_iam_policy.lambda_dynamodb_policy[count.index].arn
 }

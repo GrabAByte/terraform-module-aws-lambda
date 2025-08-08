@@ -3,6 +3,11 @@ variable "bucket_arn" {
   description = "The S3 bucket ARN to upload to"
 }
 
+variable "dynamodb_table_arn" {
+  type        = string
+  description = "The ARN of the dynamo DB table"
+}
+
 variable "enable_logging" {
   type        = bool
   description = "Whether to send logs to Cloudwatch"
@@ -24,14 +29,22 @@ variable "iam_role_name" {
   description = "The name of the IAM Role to assign the policy to"
 }
 
-variable "integration_source" {
-  type        = string
-  description = "The sourcing integration"
+variable "api_integration" {
+  type        = bool
+  description = "Is lambda integrated to API Gateway"
+  default     = false
 }
 
-variable "integration_destination" {
-  type        = string
-  description = "The destination integration"
+variable "s3_integration" {
+  type        = bool
+  description = "Is lambda integrated to S3"
+  default     = false
+}
+
+variable "dynamodb_integration" {
+  type        = bool
+  description = "Is lambda integrated to Dynamo DB"
+  default     = false
 }
 
 variable "lambda_source" {

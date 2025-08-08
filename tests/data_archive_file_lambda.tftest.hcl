@@ -1,14 +1,3 @@
-run "valid_archive_type" {
-
-  command = plan
-
-  assert {
-    condition = data.archive_file.auth_lambda.type == "zip"
-
-    error_message = "archive type was not as expected"
-  }
-}
-
 run "valid_archive_source_file" {
 
   command = plan

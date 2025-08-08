@@ -35,7 +35,6 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_arn"></a> [bucket\_arn](#input\_bucket\_arn) | The S3 bucket ARN to upload to | `string` | n/a | yes |
-| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The S3 bucket to upload to | `string` | n/a | yes |
 | <a name="input_enable_logging"></a> [enable\_logging](#input\_enable\_logging) | Whether to send logs to Cloudwatch | `bool` | `true` | no |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The Lambda function name | `string` | n/a | yes |
 | <a name="input_handler"></a> [handler](#input\_handler) | The lambda handler | `string` | n/a | yes |

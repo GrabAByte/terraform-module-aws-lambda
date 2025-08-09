@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.4.0...v1.4.1) (2025-08-09)
+
+
+### Bug Fixes
+
+* remove unnecessary IAM association ([#7](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/7)) ([dee3dc1](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/dee3dc1c91161aa9497ba89c33a2559d048da742))
+
 # [1.4.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.3.0...v1.4.0) (2025-08-09)
 
 

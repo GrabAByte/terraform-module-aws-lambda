@@ -51,12 +51,6 @@ resource "aws_iam_role_policy_attachment" "vpc_exec" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
 }
 
-resource "aws_iam_role_policy_attachment" "lambda_logging" {
-  count      = var.enable_logging ? 1 : 0
-  role       = aws_iam_role.lambda_exec_role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-}
-
 resource "aws_cloudwatch_log_group" "lambda_log_group" {
   count             = var.enable_logging ? 1 : 0
   name              = "/aws/lambda/${aws_lambda_function.lambda.function_name}"

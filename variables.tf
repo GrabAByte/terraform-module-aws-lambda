@@ -1,6 +1,12 @@
+variable "bucket_name" {
+  type        = string
+  description = "The s3 bucket name to upload to"
+  default     = null
+}
+
 variable "bucket_arn" {
   type        = string
-  description = "The S3 bucket ARN to upload to"
+  description = "The s3 bucket arn to upload to"
   default     = null
 }
 

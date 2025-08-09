@@ -17,7 +17,6 @@ data "archive_file" "lambda" {
   output_path = var.lambda_filename
 }
 
-# using latest runtime: python3.13
 resource "aws_lambda_function" "lambda" {
   function_name = var.function_name
   role          = aws_iam_role.lambda_exec_role.arn
@@ -43,6 +42,7 @@ resource "aws_lambda_function" "lambda" {
   #    BUCKET = var.bucket_name
   #  }
   #}
+
   tags = var.tags
 }
 

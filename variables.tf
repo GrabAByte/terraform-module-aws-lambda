@@ -1,6 +1,7 @@
 variable "bucket_arn" {
   type        = string
   description = "The S3 bucket ARN to upload to"
+  optional    = null
 }
 
 variable "dynamodb_table_arn" {

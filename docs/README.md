@@ -36,7 +36,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_api_integration"></a> [api\_integration](#input\_api\_integration) | Is lambda integrated to API Gateway | `bool` | `false` | no |
-| <a name="input_bucket_arn"></a> [bucket\_arn](#input\_bucket\_arn) | The S3 bucket ARN to upload to | `string` | `null` | no |
+| <a name="input_bucket_arn"></a> [bucket\_arn](#input\_bucket\_arn) | The s3 bucket arn to upload to | `string` | `null` | no |
+| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The s3 bucket name to upload to | `string` | `null` | no |
 | <a name="input_dynamodb_integration"></a> [dynamodb\_integration](#input\_dynamodb\_integration) | Is lambda integrated to Dynamo DB | `bool` | `false` | no |
 | <a name="input_dynamodb_table_arn"></a> [dynamodb\_table\_arn](#input\_dynamodb\_table\_arn) | The ARN of the dynamo DB table | `string` | `null` | no |
 | <a name="input_enable_logging"></a> [enable\_logging](#input\_enable\_logging) | Whether to send logs to Cloudwatch | `bool` | `true` | no |

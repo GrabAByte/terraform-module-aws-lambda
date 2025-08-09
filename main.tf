@@ -37,11 +37,11 @@ resource "aws_lambda_function" "lambda" {
     system_log_level = "DEBUG"
   }
 
-  #environment {
-  #  variables = {
-  #    BUCKET = var.bucket_name
-  #  }
-  #}
+  environment {
+    variables = {
+      BUCKET = var.bucket_name
+    }
+  }
 
   tags = var.tags
 }

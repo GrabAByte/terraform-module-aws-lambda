@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.4.1...v1.4.2) (2025-08-09)
+
+
+### Bug Fixes
+
+* bucket_name ENV var ([#8](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/8)) ([584c755](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/584c755d8056840c0d45fad1160edf8687ce74f0))
+
 ## [1.4.1](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.4.0...v1.4.1) (2025-08-09)
 
 

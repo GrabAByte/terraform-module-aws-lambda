@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.4.2...v1.5.0) (2025-08-09)
+
+
+### Features
+
+* add api call verbosity ([#9](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/9)) ([186f953](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/186f953ff3426a65fc03247b765c3c50f738e966))
+
 ## [1.4.2](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.4.1...v1.4.2) (2025-08-09)
 
 

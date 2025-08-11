@@ -50,6 +50,7 @@ No modules.
 | <a name="input_s3_integration"></a> [s3\_integration](#input\_s3\_integration) | Is lambda integrated to S3 | `bool` | `false` | no |
 | <a name="input_security_groups"></a> [security\_groups](#input\_security\_groups) | The security group(s) to attach the lambda to | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | The project tags | `map(any)` | n/a | yes |
+| <a name="input_timeout"></a> [timeout](#input\_timeout) | The lambda timeouot duration | `number` | `10` | no |
 | <a name="input_vpc_subnet_0"></a> [vpc\_subnet\_0](#input\_vpc\_subnet\_0) | The VPC subnet(s) to deploy the lambda into | `string` | n/a | yes |
 | <a name="input_vpc_subnet_1"></a> [vpc\_subnet\_1](#input\_vpc\_subnet\_1) | The VPC subnet(s) to deploy the lambda into | `string` | n/a | yes |
 

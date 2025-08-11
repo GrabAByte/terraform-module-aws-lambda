@@ -80,6 +80,12 @@ variable "tags" {
   description = "The project tags"
 }
 
+variable "timeout" {
+  type        = number
+  description = "The lambda timeouot duration"
+  default     = 10
+}
+
 variable "vpc_subnet_0" {
   type        = string
   description = "The VPC subnet(s) to deploy the lambda into"

@@ -38,10 +38,7 @@ resource "aws_lambda_function" "lambda" {
   }
 
   environment {
-    variables = {
-      BUCKET = var.bucket_name
-      DDB    = var.dynamodb_table
-    }
+    variables = var.environment
   }
 
   tags = var.tags

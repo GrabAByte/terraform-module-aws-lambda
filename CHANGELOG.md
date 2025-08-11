@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.5.1...v1.6.0) (2025-08-11)
+
+
+### Features
+
+* add lambda timeout variable ([0eca79d](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/0eca79d47f1fcc9837f07dd3cc5323c9279aadef))
+
 ## [1.5.1](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.5.0...v1.5.1) (2025-08-11)
 
 

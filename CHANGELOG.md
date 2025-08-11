@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.5.0...v1.5.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* pass environment as dynamic input to lambda ([#10](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/10)) ([d90ce25](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/d90ce2556e00165a926d0d2019b505118971199c))
+
 # [1.5.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.4.2...v1.5.0) (2025-08-09)
 
 

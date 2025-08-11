@@ -1,9 +1,3 @@
-variable "bucket_name" {
-  type        = string
-  description = "The s3 bucket name to upload to"
-  default     = null
-}
-
 variable "bucket_arn" {
   type        = string
   description = "The s3 bucket arn to upload to"
@@ -26,6 +20,12 @@ variable "enable_logging" {
   type        = bool
   description = "Whether to send logs to Cloudwatch"
   default     = true
+}
+
+variable "environment" {
+  type        = map(any)
+  description = "A map of lambda environment variables"
+  default     = {}
 }
 
 variable "function_name" {

@@ -37,11 +37,11 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_api_integration"></a> [api\_integration](#input\_api\_integration) | Is lambda integrated to API Gateway | `bool` | `false` | no |
 | <a name="input_bucket_arn"></a> [bucket\_arn](#input\_bucket\_arn) | The s3 bucket arn to upload to | `string` | `null` | no |
-| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The s3 bucket name to upload to | `string` | `null` | no |
 | <a name="input_dynamodb_integration"></a> [dynamodb\_integration](#input\_dynamodb\_integration) | Is lambda integrated to Dynamo DB | `bool` | `false` | no |
 | <a name="input_dynamodb_table"></a> [dynamodb\_table](#input\_dynamodb\_table) | The name of the dynamo DB table | `string` | `null` | no |
 | <a name="input_dynamodb_table_arn"></a> [dynamodb\_table\_arn](#input\_dynamodb\_table\_arn) | The ARN of the dynamo DB table | `string` | `null` | no |
 | <a name="input_enable_logging"></a> [enable\_logging](#input\_enable\_logging) | Whether to send logs to Cloudwatch | `bool` | `true` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | A map of lambda environment variables | `map(any)` | `{}` | no |
 | <a name="input_function_name"></a> [function\_name](#input\_function\_name) | The Lambda function name | `string` | n/a | yes |
 | <a name="input_handler"></a> [handler](#input\_handler) | The lambda handler | `string` | n/a | yes |
 | <a name="input_iam_role_name"></a> [iam\_role\_name](#input\_iam\_role\_name) | The name of the IAM Role to assign the policy to | `string` | n/a | yes |

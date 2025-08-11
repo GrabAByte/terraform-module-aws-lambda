@@ -23,6 +23,7 @@ resource "aws_lambda_function" "lambda" {
   handler       = var.handler
   runtime       = var.runtime
   filename      = var.lambda_filename
+  timeout       = var.timeout
 
   # ensure fingerprint of code
   source_code_hash = data.archive_file.lambda.output_base64sha256

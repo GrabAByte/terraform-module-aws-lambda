@@ -4,12 +4,6 @@ variable "bucket_arn" {
   default     = null
 }
 
-variable "dynamodb_table" {
-  type        = string
-  description = "The name of the dynamo DB table"
-  default     = null
-}
-
 variable "dynamodb_table_arn" {
   type        = string
   description = "The ARN of the dynamo DB table"

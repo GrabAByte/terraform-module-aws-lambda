@@ -49,6 +49,12 @@ variable "s3_integration" {
   default     = false
 }
 
+variable "secretsmanager_integration" {
+  type        = bool
+  description = "Is lambda integrated to AWS Secrets Manager"
+  default     = false
+}
+
 variable "dynamodb_integration" {
   type        = bool
   description = "Is lambda integrated to Dynamo DB"

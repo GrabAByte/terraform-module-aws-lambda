@@ -26,6 +26,7 @@ No modules.
 | [aws_iam_role.lambda_exec_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy.lambda_dynamodb_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 | [aws_iam_role_policy.lambda_s3_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
+| [aws_iam_role_policy.lambda_secrets_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 | [aws_iam_role_policy_attachment.vpc_exec](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_lambda_function.lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
 | [aws_lambda_permission.auth_api_gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
@@ -49,6 +50,7 @@ No modules.
 | <a name="input_logging_config"></a> [logging\_config](#input\_logging\_config) | Logging configuration for the Lambda function | <pre>object({<br/>    log_format       = string<br/>    system_log_level = string<br/>  })</pre> | <pre>{<br/>  "log_format": "JSON",<br/>  "system_log_level": "DEBUG"<br/>}</pre> | no |
 | <a name="input_runtime"></a> [runtime](#input\_runtime) | The lambda runtime | `string` | n/a | yes |
 | <a name="input_s3_integration"></a> [s3\_integration](#input\_s3\_integration) | Is lambda integrated to S3 | `bool` | `false` | no |
+| <a name="input_secretsmanager_integration"></a> [secretsmanager\_integration](#input\_secretsmanager\_integration) | Is lambda integrated to AWS Secrets Manager | `bool` | `false` | no |
 | <a name="input_security_groups"></a> [security\_groups](#input\_security\_groups) | The security group(s) to attach the lambda to | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | The project tags | `map(any)` | n/a | yes |
 | <a name="input_timeout"></a> [timeout](#input\_timeout) | The lambda timeouot duration | `number` | `10` | no |

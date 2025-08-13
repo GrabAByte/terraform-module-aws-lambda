@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.6.0...v1.7.0) (2025-08-13)
+
+
+### Features
+
+* Add tracing configuration ([#12](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/12)) ([a6ec004](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/a6ec0049d2dd7d9ce339963d221ae8ee1862b3e9))
+
 # [1.6.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.5.1...v1.6.0) (2025-08-11)
 
 

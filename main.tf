@@ -38,8 +38,8 @@ resource "aws_lambda_function" "lambda" {
   }
 
   logging_config {
-    log_format       = "JSON"
-    system_log_level = "DEBUG"
+    log_format       = var.logging_config.log_format
+    system_log_level = var.logging_config.system_log_level
   }
 
   environment {

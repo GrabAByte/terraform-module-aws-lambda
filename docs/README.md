@@ -46,11 +46,13 @@ No modules.
 | <a name="input_iam_role_name"></a> [iam\_role\_name](#input\_iam\_role\_name) | The name of the IAM Role to assign the policy to | `string` | n/a | yes |
 | <a name="input_lambda_filename"></a> [lambda\_filename](#input\_lambda\_filename) | The lambda filename | `string` | n/a | yes |
 | <a name="input_lambda_source"></a> [lambda\_source](#input\_lambda\_source) | The source file for the lambda function | `string` | n/a | yes |
+| <a name="input_logging_config"></a> [logging\_config](#input\_logging\_config) | Logging configuration for the Lambda function | <pre>object({<br/>    log_format       = string<br/>    system_log_level = string<br/>  })</pre> | <pre>{<br/>  "log_format": "JSON",<br/>  "system_log_level": "DEBUG"<br/>}</pre> | no |
 | <a name="input_runtime"></a> [runtime](#input\_runtime) | The lambda runtime | `string` | n/a | yes |
 | <a name="input_s3_integration"></a> [s3\_integration](#input\_s3\_integration) | Is lambda integrated to S3 | `bool` | `false` | no |
 | <a name="input_security_groups"></a> [security\_groups](#input\_security\_groups) | The security group(s) to attach the lambda to | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | The project tags | `map(any)` | n/a | yes |
 | <a name="input_timeout"></a> [timeout](#input\_timeout) | The lambda timeouot duration | `number` | `10` | no |
+| <a name="input_tracing_mode"></a> [tracing\_mode](#input\_tracing\_mode) | To set x-ray tracing mode | `string` | `"Active"` | no |
 | <a name="input_vpc_subnet_0"></a> [vpc\_subnet\_0](#input\_vpc\_subnet\_0) | The VPC subnet(s) to deploy the lambda into | `string` | n/a | yes |
 | <a name="input_vpc_subnet_1"></a> [vpc\_subnet\_1](#input\_vpc\_subnet\_1) | The VPC subnet(s) to deploy the lambda into | `string` | n/a | yes |
 

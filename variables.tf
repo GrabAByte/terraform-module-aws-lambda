@@ -65,6 +65,18 @@ variable "lambda_filename" {
   description = "The lambda filename"
 }
 
+variable "logging_config" {
+  description = "Logging configuration for the Lambda function"
+  type = object({
+    log_format       = string
+    system_log_level = string
+  })
+  default = {
+    log_format       = "JSON"
+    system_log_level = "DEBUG"
+  }
+}
+
 variable "runtime" {
   type        = string
   description = "The lambda runtime"
@@ -84,6 +96,12 @@ variable "timeout" {
   type        = number
   description = "The lambda timeouot duration"
   default     = 10
+}
+
+variable "tracing_mode" {
+  type        = string
+  description = "To set x-ray tracing mode"
+  default     = "Active"
 }
 
 variable "vpc_subnet_0" {

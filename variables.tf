@@ -86,6 +86,12 @@ variable "timeout" {
   default     = 10
 }
 
+variable "tracing_mode" {
+  type        = string
+  description = "To set x-ray tracing mode"
+  default     = "Active"
+}
+
 variable "vpc_subnet_0" {
   type        = string
   description = "The VPC subnet(s) to deploy the lambda into"

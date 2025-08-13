@@ -33,6 +33,10 @@ resource "aws_lambda_function" "lambda" {
     security_group_ids = [var.security_groups]
   }
 
+  tracing_config {
+    mode = var.tracing_mode
+  }
+
   logging_config {
     log_format       = "JSON"
     system_log_level = "DEBUG"

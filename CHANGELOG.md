@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.7.0...v1.7.1) (2025-08-13)
+
+
+### Bug Fixes
+
+* add secrets manager integration for secret retrieval ([32b4896](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/32b489661950e0e3d40406d55f8da002179f2d47))
+
 # [1.7.0](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.6.0...v1.7.0) (2025-08-13)
 
 

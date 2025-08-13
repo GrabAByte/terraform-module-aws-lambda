@@ -108,3 +108,19 @@ resource "aws_iam_role_policy" "lambda_dynamodb_policy" {
     ]
   })
 }
+
+# IAM policy to allow reading Secrets Manager
+resource "aws_iam_role_policy" "lambda_secrets_policy" {
+  count = var.secretsmanager_integration ? 1 : 0
+  name  = "lambda_secrets_policy"
+  role  = aws_iam_role.lambda_exec_role.name
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [{
+      Action   = ["secretsmanager:GetSecretValue"]
+      Effect   = "Allow"
+      Resource = "*"
+    }]
+  })
+}

@@ -72,11 +72,11 @@ variable "lambda_filename" {
 }
 
 variable "logging_config" {
-  description = "Logging configuration for the Lambda function"
   type = object({
     log_format       = string
     system_log_level = string
   })
+  description = "Logging configuration for the Lambda function"
   default = {
     log_format       = "JSON"
     system_log_level = "DEBUG"

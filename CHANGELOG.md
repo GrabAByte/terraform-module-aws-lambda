@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.7.2...v1.7.3) (2025-08-15)
+
+
+### Bug Fixes
+
+* KMS permissions ([#15](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/15)) ([397e3b2](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/397e3b2c14729c446b25305f4159142c57141de2))
+
 ## [1.7.2](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.7.1...v1.7.2) (2025-08-15)
 
 

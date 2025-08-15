@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.7.1...v1.7.2) (2025-08-15)
+
+
+### Bug Fixes
+
+* descriptions ([#14](https://github.com/GrabAByte/terraform-module-aws-lambda/issues/14)) ([6ab2a87](https://github.com/GrabAByte/terraform-module-aws-lambda/commit/6ab2a870d5d1d6abb72dfcf82535ec6b5cf0bfc7))
+
 ## [1.7.1](https://github.com/GrabAByte/terraform-module-aws-lambda/compare/v1.7.0...v1.7.1) (2025-08-13)
 
 
